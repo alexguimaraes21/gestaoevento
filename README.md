@@ -56,3 +56,9 @@ spring:
     activate:
       on-profile: dev
 `
+
+## Documentação dos Endpoints:
+
+A aplicação possui Swagger que pode ser acessado através da URL `http://localhost:8080/swagger-ui/index.html`.
+
+Caso prefira o ReDoc, a URL de acesso é a `http://localhost:8080/redoc`
