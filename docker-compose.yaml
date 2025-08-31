@@ -1,0 +1,29 @@
+services:
+  gestaoevento-api:
+    image: alexguimaraes21/gestaoevento-api:latest
+    container_name: gestao-evento
+    restart: no
+    environment:
+      TZ: America/Sao_Paulo
+      DATASOURCE_URL: jdbc:mariadb://gestaoevento-db:3306/db_gestaoevento
+      DATASOURCE_USERNAME: usr_gestaoevento
+      DATASOURCE_PASSWORD: gestaoevento
+      DATASOURCE_POOL-NAME: gestao-evento
+      DATASOURCE_MAXIMUM-POOL-SIZE: 10
+    ports:
+      - 8080:8080
+  gestaoevento-db:
+    image: mariadb:latest
+    container_name: gestaoevento-db
+    restart: no
+    environment:
+      TZ: America/Sao_Paulo
+      MARIADB_DATABASE: db_gestaoevento
+      MARIADB_ROOT_PASSWORD: rootgestaoevento
+      MARIADB_USER: usr_gestaoevento
+      MARIADB_PASSWORD: gestaoevento
+      # Por segurança, a porta do MariaDB fica fechada para rede externa. Apenas acesso na rede do container é permitido
+      # ports:
+      # - 3306:3306
+    volumes:
+      - ./data:/var/lib/mysql

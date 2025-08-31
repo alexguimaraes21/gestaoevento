@@ -1,0 +1,55 @@
+# Spring configuration
+spring:
+  config:
+    activate:
+      on-profile: env
+  output:
+    ansi:
+      enabled: always
+  devtools:
+    add-properties: true
+  datasource:
+    hikari:
+      jdbc-url: ${DATASOURCE_URL:jdbc:mariadb:@127.0.0.1:3306/db_gestaoevento}
+      username: ${DATASOURCE_USERNAME:gestaoevento}
+      password: ${DATASOURCE_PASSWORD:gestaoevento}
+      pool-name: ${DATASOURCE_POOL-NAME:gestao-evento}
+      maximum-pool-size: ${DATASOURCE_MAXIMUM-POOL-SIZE:5}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+# Logging Configuration
+logging:
+  level:
+    web: info
+    root: info
+    sql: info
+  charset:
+    console: UTF-8
+    file: UTF-8
+  file:
+    name: logs/${spring.application.name}.${spring.config.activate.on-profile}.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/${spring.application.name}.${spring.config.activate.on-profile}.%d{yyyy-MM-dd}.%i.log
+      max-file-size: 10MB
+
+# Server configuration
+server:
+  port: 8080
+  address: 0.0.0.0
+
+# Api Parameters Configuration
+api:
+  prefix: ${API_PREFIX:/api}
+  version:
+    v1: v1
+  pagination:
+    list:
+      records-per-page: 10.0
+  web:
+    locale: pt_BR
+    locale-resolver: fixed
