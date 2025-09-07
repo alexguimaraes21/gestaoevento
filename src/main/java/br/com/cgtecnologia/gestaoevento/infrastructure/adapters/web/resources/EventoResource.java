@@ -71,9 +71,7 @@ public class EventoResource {
     @Operation(summary = "Remove Evento", description = "Remove um Evento utilizando ID como parâmetro")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Remove um Evento",
-                    content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
-                            schema = @Schema(implementation = EventoDtoOut.class)
-                    ) } ),
+                    content = { @Content } ),
             @ApiResponse(responseCode = "500", description = "Erro ao remover um Evento", content = @Content)
     })
     @DeleteMapping(value = "/v1/evento")

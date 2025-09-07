@@ -1,13 +1,13 @@
 package br.com.cgtecnologia.gestaoevento.infrastructure.adapters.persistence.repositories;
 
-import br.com.cgtecnologia.gestaoevento.core.ports.out.IGenericRepository;
+import br.com.cgtecnologia.gestaoevento.core.ports.out.IGenericRepositoryPort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public abstract class GenericRepository<T, ID, E> implements IGenericRepository<T, ID> {
+public abstract class GenericRepositoryPort<T, ID, E> implements IGenericRepositoryPort<T, ID> {
 
     protected abstract E toJpaEntity(T coreEntity);
     protected abstract T toCoreEntity(E jpaEntity);

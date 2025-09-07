@@ -1,18 +1,18 @@
 package br.com.cgtecnologia.gestaoevento.infrastructure.adapters.persistence.repositories;
 
 import br.com.cgtecnologia.gestaoevento.core.entities.EventoCoreEntity;
-import br.com.cgtecnologia.gestaoevento.core.ports.out.IEventoRepository;
+import br.com.cgtecnologia.gestaoevento.core.ports.out.IEventoRepositoryPort;
 import br.com.cgtecnologia.gestaoevento.infrastructure.adapters.persistence.entities.EventoJpaEntity;
 import br.com.cgtecnologia.gestaoevento.infrastructure.adapters.persistence.mappers.EventoEntityMapper;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class EventoRepositoryImpl extends GenericRepository<EventoCoreEntity, Long, EventoJpaEntity> implements IEventoRepository {
+public class EventoRepositoryPortImpl extends GenericRepositoryPort<EventoCoreEntity, Long, EventoJpaEntity> implements IEventoRepositoryPort {
 
     private final EventoJpaRepository eventoJpaRepository;
 
-    public EventoRepositoryImpl(EventoJpaRepository eventoJpaRepository) {
+    public EventoRepositoryPortImpl(EventoJpaRepository eventoJpaRepository) {
         this.eventoJpaRepository = eventoJpaRepository;
     }
 

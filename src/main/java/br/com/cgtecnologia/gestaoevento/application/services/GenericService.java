@@ -2,12 +2,12 @@ package br.com.cgtecnologia.gestaoevento.application.services;
 
 
 import br.com.cgtecnologia.gestaoevento.core.ports.in.IGenericService;
-import br.com.cgtecnologia.gestaoevento.core.ports.out.IGenericRepository;
+import br.com.cgtecnologia.gestaoevento.core.ports.out.IGenericRepositoryPort;
 
 import java.util.List;
 import java.util.Optional;
 
-public abstract class GenericService<T, ID, R extends IGenericRepository<T, ID>> implements IGenericService<T, ID> {
+public abstract class GenericService<T, ID, R extends IGenericRepositoryPort<T, ID>> implements IGenericService<T, ID> {
 
     protected final R repository;
 
