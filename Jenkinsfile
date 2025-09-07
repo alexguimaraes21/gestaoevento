@@ -1,13 +1,6 @@
 pipeline {
     agent any
 
-    options {
-            // Para interromper imediatamente se algum stage paralelo falhar
-            failFast true
-            // Mantém apenas os últimos 10 builds no Jenkins
-            buildDiscarder(logRotator(numToKeepStr: '10'))
-        }
-
     environment {
         // Altere para o seu registro e nome da imagem
         IMAGE_NAME = 'gestaoevento-api'
