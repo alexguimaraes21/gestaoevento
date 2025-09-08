@@ -1,5 +1,6 @@
 package br.com.cgtecnologia.gestaoevento.core.entities;
 
+import br.com.cgtecnologia.gestaoevento.core.enums.TipoStatusInscricaoEventoEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,4 +20,5 @@ public class EventoCoreEntity {
     private String local;
     private int capacidade;
     private boolean ativo;
+    private TipoStatusInscricaoEventoEnum statusInscricao;
 }

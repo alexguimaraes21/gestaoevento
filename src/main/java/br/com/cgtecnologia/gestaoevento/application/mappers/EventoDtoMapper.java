@@ -3,6 +3,7 @@ package br.com.cgtecnologia.gestaoevento.application.mappers;
 import br.com.cgtecnologia.gestaoevento.application.dtos.in.EventoDtoIn;
 import br.com.cgtecnologia.gestaoevento.application.dtos.out.EventoDtoOut;
 import br.com.cgtecnologia.gestaoevento.core.entities.EventoCoreEntity;
+import br.com.cgtecnologia.gestaoevento.core.enums.TipoStatusInscricaoEventoEnum;
 
 public class EventoDtoMapper {
 
@@ -14,6 +15,7 @@ public class EventoDtoMapper {
                 .local(eventoDtoIn.local())
                 .capacidade(eventoDtoIn.capacidade())
                 .ativo(eventoDtoIn.ativo())
+                .statusInscricao(TipoStatusInscricaoEventoEnum.ABERTA)
                 .build();
     }
 

@@ -12,7 +12,7 @@ import java.util.UUID;
 @Data
 @Builder
 public class ParticipanteCoreEntity {
-    private UUID id;
+    private Long id;
     private String nome;
     private String email;
 }
