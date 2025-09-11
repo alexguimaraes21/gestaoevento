@@ -12,7 +12,9 @@
 
 Ao executar a aplicação utilizando o comando do Maven:
 
-`./mvnw spring-boot:run`
+```shell
+./mvnw spring-boot:run
+```
 
 Automaticamente será baixado a imagem Docker do MariaDB e criado um container com o Banco de Dados que será consumido pela
 Aplicação. Isso torna-se possível por causa da dependencia no pom.xml: `org.springframework.boot:spring-boot-docker-compose`.
@@ -30,7 +32,9 @@ Por ser um Shell Script, funciona apenas nos sistemas operacionais que contam co
 
 Para gerar nova imagem docker, basta executar o script com o comando:
 
-`./atualiza-docker-image.sh`
+```shell
+./atualiza-docker-image.sh
+```
 
 Ao executar o script, já será possível ver o retorno dos comandos. Caso erro de permissão de execução ocorra, será necessário
 adicionar permissão de execução no script com o comando: `chmod +x ./atualiza-docker-image.sh`. Após o comando, tente executar
@@ -42,20 +46,20 @@ Disponibilizamos um arquivo de configuração de exemplo chamado application-env
 porém, antes de inicializar a aplicação no ambiente de desenvolvimento, é necessário alterar o parâmetro abaixo (primeiro parâmetro da lista).
 
 De:
-`
+```yaml
 spring:
   config:
     activate:
       on-profile: env
-`
+```
 
 Para:
-`
+```yaml
 spring:
   config:
     activate:
       on-profile: dev
-`
+```
 
 ## Documentação dos Endpoints:
 
